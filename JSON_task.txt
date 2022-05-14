@@ -1,0 +1,81 @@
+4. Создать внешний репозиторий c названием JSON.
+github.com => Repositories => New => JSON
+ 5. Клонировать репозиторий JSON на локальный компьютер.
+git clone (вставляем ссылку на внешний репозиторий путём копирования из Code - HTTPS)
+ 6. Внутри локального JSON создать файл “new.json”.
+cd JSON
+touch new.json
+ 7. Добавить файл под гит.
+git add new.json
+ 8. Закоммитить файл.
+git commit -m "new.json added"
+ 9. Отправить файл на внешний GitHub репозиторий.
+git push
+ 10. Отредактировать содержание файла “new.json” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате JSON.
+vim new.json
+i/insert
+{
+        "ФИО":"Дубинчук Евгений",
+        "Возраст":34,
+        "Количество домашних животных":0,
+        "Будущая желаемая зарплата":"100 т.р."
+}
+Esc:wq
+ 11. Отправить изменения на внешний репозиторий.
+ git commit -am "new info added to new.json"
+ git push
+ 12. Создать файл preferences.json
+touch preferences.json
+ 13. В файл preferences.json добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате JSON.
+vim preferences.json
+{
+        "Любимый фильм":"Начало",
+        "Любимый сериал":"Очень странные дела",
+        "Любимая еда":"Мясо по-французски",
+        "Любимое время года":"Лето",
+        "Страна, которую хотели бы посетить":"Аргентина"
+}
+Esc:wq
+ 14. Создать файл sklls.json добавить информацию о скиллах которые будут изучены на курсе в формате JSON
+vim sklls.json
+i
+{
+        "Tools": "Git Bash, JavaScript, Postman, VS Code, DevTools, DBeaver, Charles Proxy, Fiddler, Jmeter",
+        "Programming basics": "JavaScript, Python, SQL",
+		"Testing documentation": "Test cases, Check lists, Bug reports",
+        "Testing skills": "Manual functional testing, Mobile testing, API testing, Stress testing"        
+}
+- Esc:wq
+ 15. Отправить сразу 2 файла на внешний репозиторий.
+git add .
+git commit -m "new json files added"
+git push
+ 16. На веб интерфейсе создать файл bug_report.json.
+Зайти в репозиторий JSON
+Кликнуть на кнопку с выпадающим списком "Add file"
+Выбрать "Create new file"
+В открывшемся окошке ввести имя файла "bug_report.json"
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Кликнуть на кнопку "Commit new file" внизу страницы
+ 18. На веб интерфейсе модифицировать файл bug_report.json, добавить баг репорт в формате JSON.
+Кликнуть по названию файла "bug_report.json"
+Кликнуть на иконку "карандаш"
+В открывшемся окне добавляем запись:
+[
+  {
+    "Bug report ID":1,
+    "Title":"When the cart contains one item, it is not possible to add a second item via the add to cart button on a product page",
+    "Steps to reproduce":{
+      "Step 1":"add one item to cart",
+      "Step 2":"go to product abc via the search bar",
+      "Step 3":"add new item to cart via 'add to cart' button",
+      "Step 4":"go to cart"
+    },
+    "Expected result":"The cart should contain 2 items"
+    "Actual result":"The cart contains only 1 item"
+  }
+]
+ 19. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ Кликнуть на кнопку "Commit new file" внизу страницы
+ 20. Синхронизировать внешний и локальный репозиторий JSON
+ git pull
